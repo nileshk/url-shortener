@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}URL submission failed{% endblock %}
+
+{% block content %}
+<h2>URL submission failed</h2>
+{% endblock %}
+
+{% block extra_body %}
+<script>
+$(document).ready(
+  function() {
+    $("#id_u").focus().select();
+  });
+</script>  
+{% endblock %}

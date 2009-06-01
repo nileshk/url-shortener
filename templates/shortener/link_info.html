@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Link info{% endblock %}
+
+{% block content %}
+<p>
+<a href="{{ link.short_url }}">{{ link.url }}</a> (Score: {{ link.usage_count }})
+<br/>
+<br/>
+Submitted on: {{ link.date_submitted|date:"M d, Y" }}
+</p>
+{% endblock %}

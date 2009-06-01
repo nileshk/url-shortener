@@ -1,0 +1,6 @@
+*.sqlite
+*.pyc
+.DS_Store
+.svn
+svn-commit.tmp
+svn-prop.tmp
