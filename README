@@ -7,6 +7,15 @@ The shortened URLs use the base 62 value of ids of the model they are
 stored in.  A count of how many times the URLs are used is kept.  The
 main page shows the 10 most recent and 10 most popular URLs.
 
+Prerequisites
+=============
+
+Download Blueprint from: http://www.blueprintcss.org/
+Copy the "blueprint" folder into static/css/ (which you may need to create)
+
+Note that in a production installation, you'll want to have your web
+server serve the "static" folder instead of letting Django serve it.
+
 Settings
 ========
 
