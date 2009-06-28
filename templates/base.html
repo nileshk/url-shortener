@@ -3,14 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <title>{% block title %}URLs{% endblock %}</title>
+
+  <link rel="stylesheet" 
+        href="/static/css/blueprint/screen.css" 
+        type="text/css" media="screen, projection"/>
+  <link rel="stylesheet" href="static/css/blueprint/print.css" type="text/css" media="print"/> 
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" 
+        href="/static/css/blueprint/ie.css" 
+        type="text/css" media="screen, projection"/>
+  <![endif]-->
+  
+  <link rel="stylesheet" href="/static/css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection"/>
+  
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
   {% block extra_head %}
   {% endblock %}
 </head>
 
 <body>
+  <div class="container">
+  <div class="span-24 last">
+    <h1><a href="{{ site_base_url }}">{{ site_name }}</a></h1>
+    <hr/>
+  </div>
+  <div class="span-24 last">
   {% block content %}{% endblock %}
+  <hr/>
+  </div>
 
+  <div class="span-19 colborder">
   {% if show_url_form %}
   {% block url_form %}
   <form name="url_form" action="/submit/" method="get">
@@ -19,7 +41,8 @@
   </form>
   {% endblock %}
   {% endif %}
-  
+  </div>
+  <div class="span-4 last">
   {% if show_bookmarklet %}
   {% block bookmarklet %}
   <br/>
@@ -27,6 +50,8 @@
 <a href="javascript:(function(){var a=window,b=document,c=encodeURIComponent;d=a.open(&#39;{{ site_base_url }}submit/?u=&#39;+c(b.location));})();">Shorten with {{ site_name }}</a>
   {% endblock %}
   {% endif %}
+  </div>
   {% block extra_body %}{% endblock %}
+  </div>
 </body>
 </html>
