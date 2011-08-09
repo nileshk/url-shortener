@@ -42,7 +42,7 @@ class Link(models.Model):
 
     """
     url = models.URLField(verify_exists=True, unique=True)
-    date_submitted = models.DateTimeField(default=datetime.datetime.now())
+    date_submitted = models.DateTimeField(auto_now_add=True)
     usage_count = models.IntegerField(default=0)
 
     def to_base62(self):
